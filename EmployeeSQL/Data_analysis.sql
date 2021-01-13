@@ -77,3 +77,11 @@ SELECT last_name, COUNT(*) AS freq_count
 FROM employees
 GROUP BY last_name
 ORDER BY freq_count DESC;
+
+--9. Search my id number.
+SELECT * FROM employees
+LEFT JOIN dept_emp 
+ON employees.emp_no=dept_emp.emp_no
+INNER JOIN departments 
+ON departments.dept_no=dept_emp.dept_no
+WHERE employees.emp_no = 499942;
